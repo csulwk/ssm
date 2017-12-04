@@ -1,5 +1,7 @@
 package cn.javaee.ch5.pojo;
 
+import cn.javaee.ch5.enumeration.SexEnum;
+
 import java.util.Date;
 import java.util.List;
 

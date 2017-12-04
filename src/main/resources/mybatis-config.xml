@@ -4,9 +4,15 @@
 
 <configuration>
 
-    <!-- alias -->
+    <properties resource="jdbc.properties" />
+
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false" />
+    </settings>
+
     <typeAliases>
-        <typeAlias alias="role" type="cn.javaee.ch3.pojo.Role" />
+        <package name="cn.javaee.ch5.pojo" />
     </typeAliases>
 
     <!-- database environment -->
@@ -14,17 +20,16 @@
         <environment id="development">
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/ssm" />
-                <property name="username" value="root" />
-                <property name="password" value="kernel" />
+                <property name="driver" value="${database.drive}" />
+                <property name="url" value="${database.url}" />
+                <property name="username" value="${database.username}" />
+                <property name="password" value="${database.password}" />
             </dataSource>
         </environment>
     </environments>
 
-    <!-- mapper file -->
     <mappers>
-        <mapper resource="cn/javaee/ch3/mapper/RoleMapper.xml" />
+        <package name="cn.javaee.ch5.mapper" />
     </mappers>
 
 </configuration>

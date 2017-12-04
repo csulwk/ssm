@@ -1,4 +1,4 @@
-package cn.javaee.ch5.pojo;
+package cn.javaee.ch5.enumeration;
 
 /**
  * 性别枚举类
@@ -33,7 +33,7 @@ public enum SexEnum {
         this.name = name;
     }
 
-    public SexEnum getSexById(int id){
+    public static SexEnum getSexById(int id){
         for (SexEnum sex:SexEnum.values()){
             if (sex.getId() == id){
                 return sex;
