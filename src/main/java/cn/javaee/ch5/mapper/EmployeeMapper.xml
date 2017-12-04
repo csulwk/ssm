@@ -3,28 +3,35 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.javaee.ch5.mapper.EmployeeMapper">
-    <resultMap id="employee" type="cn.javaee.ch5.pojo.Employee">
-        <id column="real_name" property="realName" />
-        <result column="sex" property="sex" typeHandler="cn.javaee.ch5.typeHandler.SexTypeHandler" />
-        <result column="birthday" property="birthday" />
-        <result column="mobile" property="mobile" />
-        <result column="email" property="email" />
-        <result column="position" property="position" />
-        <result column="note" property="note" />
-        <association property="workCard" column="id" select="cn.javaee.ch5.mapper.WorkCardMapper.getWorkCardByEmpId" />
-        <collection property="employeeTaskList" column="id" select="cn.javaee.ch5.mapper.EmployeeMapper.getEmployeeTaskByEmpId" />
+    <resultMap type="cn.javaee.ch5.pojo.Employee" id="employee">
+        <id column="id" property="id"/>
+        <result column="real_name" property="realName"/>
+        <result column="sex" property="sex"
+                typeHandler="cn.javaee.ch5.typeHandler.SexTypeHandler"/>
+        <result column="birthday" property="birthday"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+        <association property="workCard" column="id"
+                     select="cn.javaee.ch5.mapper.WorkCardMapper.getWorkCardByEmpId"/>
+        <collection property="employeeTaskList" column="id"
+                    fetchType="eager"
+                    select="cn.javaee.ch5.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
         <discriminator javaType="long" column="sex">
-            <case value="1" resultMap="maleHealthFormMapper" />
-            <case value="2" resultMap="femaleHealthFormMapper" />
+            <case value="1" resultMap="maleHealthFormMapper"/>
+            <case value="2" resultMap="femaleHealthFormMapper"/>
         </discriminator>
     </resultMap>
 
-    <resultMap id="femaleHealthFormMapper" type="cn.javaee.ch5.pojo.FemaleHealthForm" extends="employee">
-        <association property="femaleHealthForm" column="id" select="cn.javaee.ch5.mapper.FemaleHealthFormMapper.getFemaleHealthForm"/>
+    <resultMap id="femaleHealthFormMapper" type="cn.javaee.ch5.pojo.FemaleEmployee" extends="employee">
+        <association property="femaleHealthForm" column="id"
+                     select="cn.javaee.ch5.mapper.FemaleHealthFormMapper.getFemaleHealthForm"/>
     </resultMap>
 
-    <resultMap id="maleHealthFormMapper" type="cn.javaee.ch5.pojo.MaleHealthForm" extends="employee">
-        <association property="maleHealthForm" column="id" select="cn.javaee.ch5.mapper.MaleHealthFormMapper.getMaleHealthForm"/>
+    <resultMap id="maleHealthFormMapper" type="cn.javaee.ch5.pojo.MaleEmployee" extends="employee">
+        <association property="maleHealthForm" column="id"
+                     select="cn.javaee.ch5.mapper.MaleHealthFormMapper.getMaleHealthForm"/>
     </resultMap>
 
     <select id="getEmployee" parameterType="long" resultMap="employee">

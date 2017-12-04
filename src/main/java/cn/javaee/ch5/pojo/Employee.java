@@ -103,4 +103,5 @@ public class Employee {
     public void setEmployeeTaskList(List<EmployeeTask> employeeTaskList) {
         this.employeeTaskList = employeeTaskList;
     }
+
 }
