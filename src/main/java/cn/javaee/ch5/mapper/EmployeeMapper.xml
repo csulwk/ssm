@@ -16,7 +16,6 @@
         <association property="workCard" column="id"
                      select="cn.javaee.ch5.mapper.WorkCardMapper.getWorkCardByEmpId"/>
         <collection property="employeeTaskList" column="id"
-                    fetchType="eager"
                     select="cn.javaee.ch5.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
         <discriminator javaType="long" column="sex">
             <case value="1" resultMap="maleHealthFormMapper"/>

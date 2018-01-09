@@ -19,7 +19,7 @@ public class Test5_35 {
             Logger logger = Logger.getLogger(Test5_35.class);
             sqlSession = SqlSessionFactoryUtils.openSqlSession();
             EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
-            Employee employee = employeeMapper.getEmployee(2L);
+            Employee employee = employeeMapper.getEmployee(1L);
             logger.info("----"+employee.getBirthday()+"----");
         } catch (Exception e) {
             e.printStackTrace();
