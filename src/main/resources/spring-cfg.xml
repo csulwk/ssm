@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="beanPostProcessor" class="cn.javaee.ch9.bean.BeanPostProcessorImpl" />
+    <bean id="disposableBean" class="cn.javaee.ch9.bean.DisposableBeanImpl" />
+
+    <bean id="source" class="cn.javaee.ch9.pojo.Source">
+        <property name="fruit" value="橙汁" />
+        <property name="sugar" value="少糖" />
+        <property name="size" value="大杯" />
+    </bean>
+
+    <bean id="juiceMaker2" class="cn.javaee.ch9.pojo.JuiceMaker2">
+        <property name="beverageShop" value="贡茶" />
+        <property name="source" ref="source" />
+    </bean>
+
+
+    <bean id="source2" class="cn.javaee.ch9.pojo.Source2" init-method="init" destroy-method="destroy" >
+        <property name="fruit" value="香蕉牛奶" />
+        <property name="sugar" value="多糖" />
+        <property name="size" value="大杯" />
+    </bean>
+
+    <bean id="juiceMaker3" class="cn.javaee.ch9.pojo.JuiceMaker3" init-method="init" destroy-method="destroy">
+        <property name="beverageShop" value="七月上" />
+        <property name="source" ref="source2" />
+    </bean>
+
+</beans>
