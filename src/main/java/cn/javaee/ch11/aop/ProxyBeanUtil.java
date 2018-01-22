@@ -1,4 +1,4 @@
-package cn.javaee.ch11;
+package cn.javaee.ch11.aop;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

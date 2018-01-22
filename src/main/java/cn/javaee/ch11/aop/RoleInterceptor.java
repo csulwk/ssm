@@ -1,4 +1,4 @@
-package cn.javaee.ch11;
+package cn.javaee.ch11.aop;
 
 /**
  * @author lwk

@@ -1,4 +1,4 @@
-package cn.javaee.ch11;
+package cn.javaee.ch11.aop;
 
 import cn.javaee.ch3.pojo.Role;
 
