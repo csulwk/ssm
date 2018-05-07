@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-cfg4.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("ch05/spring-cfg4.xml");
         RoleService roleService = ctx.getBean(RoleService.class);
         Role role = new Role();
         role.setId(1L);

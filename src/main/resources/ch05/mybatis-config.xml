@@ -15,7 +15,7 @@
         <package name="cn.javaee.ch5.pojo" />
     </typeAliases>
 
-    <!-- database environment -->
+    <!-- database environment
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
@@ -27,6 +27,7 @@
             </dataSource>
         </environment>
     </environments>
+    -->
 
     <mappers>
         <package name="cn.javaee.ch5.mapper" />

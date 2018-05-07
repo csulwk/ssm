@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-cfg12.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("ch12/spring-cfg12.xml");
         RoleMapper roleMapper = ctx.getBean(RoleMapper.class);
         Role role = new Role();
         role.setRoleName("role_name_mapper");

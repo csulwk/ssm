@@ -1,10 +1,8 @@
-package cn.javaee.ch5.main;
+package cn.javaee.ch5;
 
 import cn.javaee.ch3.utils.SqlSessionFactoryUtils;
 import cn.javaee.ch5.mapper.EmployeeMapper;
-import cn.javaee.ch5.mapper.TaskMapper;
 import cn.javaee.ch5.pojo.Employee;
-import cn.javaee.ch5.pojo.Task;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 

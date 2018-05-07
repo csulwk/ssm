@@ -25,7 +25,7 @@ public class SqlSessionFactoryUtils {
             if (sqlSessionFactory != null){
                 return sqlSessionFactory;
             }
-            String resource = "mybatis-config.xml";
+            String resource = "ch05/mybatis-config.xml";
             InputStream inputStream;
             try{
                 inputStream = Resources.getResourceAsStream(resource);
